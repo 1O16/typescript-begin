@@ -372,3 +372,26 @@ var 네버등장2 = function () {
     throw new Error();
 };
 // public, private 쓰는거 보니까 타입스크립트 귀여운편
+var User1 = /** @class */ (function () {
+    function User1(a) {
+        // private는 class 내부에서만 수정, 이용가능
+        this.familyName = "시";
+        this.name = this.familyName + a;
+    }
+    User1.prototype.이름변경함수 = function () {
+        this.familyName = "이";
+    };
+    return User1;
+}());
+var 유저1 = new User1("바라");
+유저1.name = "안뇽";
+// private class 밖에서 바꾸는 법
+유저1.이름변경함수();
+var 사람인 = /** @class */ (function () {
+    // this 생략 가능
+    function 사람인(name) {
+        this.name = name;
+    }
+    return 사람인;
+}());
+var 자식 = new 사람인("kkk");

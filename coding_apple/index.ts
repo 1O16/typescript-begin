@@ -550,3 +550,30 @@ let 네버등장2 = function () {
 };
 
 // public, private 쓰는거 보니까 타입스크립트 귀여운편
+
+class User1 {
+  // public은 생략 가능
+  public name: string;
+  // private는 class 내부에서만 수정, 이용가능
+  private familyName: string = "시";
+
+  constructor(a) {
+    this.name = this.familyName + a;
+  }
+
+  이름변경함수() {
+    this.familyName = "이";
+  }
+}
+
+let 유저1 = new User1("바라");
+유저1.name = "안뇽";
+// private class 밖에서 바꾸는 법
+유저1.이름변경함수();
+
+class 사람인 {
+  // this 생략 가능
+  constructor(public name: string) {}
+}
+
+let 자식 = new 사람인("kkk");
