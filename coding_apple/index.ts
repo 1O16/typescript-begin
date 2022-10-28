@@ -577,3 +577,15 @@ class 사람인 {
 }
 
 let 자식 = new 사람인("kkk");
+
+// class에서 사용가능한 protected, static 키워드
+
+// class 복수 -> extends 붙이면 됩니다
+class User2 {
+  x = 10;
+}
+class NewUser1 extends User2 {
+  y = 20;
+}
+let 뉴유저1 = new NewUser1();
+console.log(뉴유저1); // x = 10; y = 2-;
